@@ -26,7 +26,7 @@
 
 
 
-<link rel="stylesheet" href="/main.8067e45a523fc017981602b25d3063cb96ed242558ddb10605e69af4ae5b2c73.css">
+<link rel="stylesheet" href="/main.db8a2be643a8464eeee5588b6b66a62c409ae96e09f646f11cb02350d774e1a6.css">
 
 
 
@@ -73,17 +73,13 @@
 
     
         <div class="container">
-            <header class="header">
+            <header class="header" id="myHeader">
     <span class="header__inner">
         <a href="/" style="text-decoration: none;">
     <div class="logo">
-        <span class="logo__inner">
-            
-            <span class="logo__right">
-                <span class="logo__text">Anton Karlsson</span>
-                <span class="logo__subtext">Technical Artist | Technical Leveldesigner</span>
-            </span>
-        </span>
+        
+        <span class="logo__text" id="myText">Anton Karlsson</span>
+        <span class="logo__subtext" id="mySubtext">Technical Artist | Technical Leveldesigner</span>
     </div>
 </a>
         <span class="header__right">
@@ -95,13 +91,13 @@
             <li class=" currentLink "><a href="/">Showreel</a></li>
             
 
-            <li class=""><a href="/projects">Projects</a></li>
+            <li class=""><a href="/projects/">Projects</a></li>
             
 
-            <li class=""><a href="/resume">Resumé</a></li>
+            <li class=""><a href="/resume/">Resumé</a></li>
             
 
-            <li class=""><a href="/about">About</a></li>
+            <li class=""><a href="/about/">About</a></li>
     </ul>
 </nav>
 
@@ -122,76 +118,84 @@
     <main aria-role="main">
         <div>
             <div id="player"></div>
+
+            <h2>Breakdown</h2>
+            <img src="" />
+
+            <div>
+                <h4><a id="ts" class="link" onclick="setCurrentTime(0);scrollFunction();">00:03</a>Item 1</h4>
+                <p align="left">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a class="link" href="/projects/">Read More</a>
+                </p>
+
+                <p align="left">Skills: Software</p>
+            </div>
+            <div>
+                <h4><a id="ts" class="link" onclick="setCurrentTime(1);scrollFunction();">00:21</a>Item 2</h4>
+                <p align="left">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a class="link" href="/projects/">Read More</a>
+                </p>
+
+                <p align="left">Skills: Software</p>
+            </div>
+            <div>
+                <h4><a id="ts" class="link" onclick="setCurrentTime(2);scrollFunction();">00:37</a>Item 3</h4>
+                <p align="left">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a class="link" href="/projects/">Read More</a>
+                </p>
+
+                <p align="left">Skills: Software</p>
+            </div>
+            <div>
+                <h4><a id="ts" class="link" onclick="setCurrentTime(3);scrollFunction();">00:45</a>Item 4</h4>
+                <p align="left">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a class="link" href="/projects/">Read More</a>
+                </p>
+
+                <p align="left">Skills: Software</p>
+            </div>
+            <div>
+                <h4><a id="ts" class="link" onclick="setCurrentTime(4);scrollFunction();">01:12</a>Item 5</h4>
+                <p align="left">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a class="link" href="/projects/">Read More</a>
+                </p>
+
+                <p align="left">Skills: Software</p>
+            </div>
+
             <script>
-                var tag = document.createElement('script');
+                var tag = document.createElement("script");
                 tag.src = "https://www.youtube.com/iframe_api";
-                var firstScriptTag = document.getElementsByTagName('script')[0];
+                var firstScriptTag = document.getElementsByTagName("script")[0];
                 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
                 var player;
                 function onYouTubeIframeAPIReady() {
-                    player = new YT.Player('player', {
+                    player = new YT.Player("player", {
                     height: "720",
                     width: "1280",
-                    videoId: 'tgbNymZ7vqY',
+                    videoId: "tgbNymZ7vqY",
                     });
                 }
                 function setCurrentTime(slideNum) {
                     var object = [ 3, 21, 37, 45, 72 ];
                     player.seekTo(object[slideNum]);
                 }
+
+                function scrollFunction() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
             </script>
-
-            <h2>Breakdown</h2>
-
-            <div>
-                <h4><timestamp href="javascript:void(0);" onclick="setCurrentTime(0)">00:03</timestamp>Item 1</h4>
-                <p align="left">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-
-                <p align="left">Skills: Software</p>
-            </div>
-            <div>
-                <h4><timestamp href="javascript:void(0);" onclick="setCurrentTime(1)">00:21</timestamp>Item 2</h4>
-                <p align="left">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-
-                <p align="left">Skills: Software</p>
-            </div>
-            <div>
-                <h4><timestamp href="javascript:void(0);" onclick="setCurrentTime(2)">00:37</timestamp>Item 3</h4>
-                <p align="left">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-
-                <p align="left">Skills: Software</p>
-            </div>
-            <div>
-                <h4><timestamp href="javascript:void(0);" onclick="setCurrentTime(3)">00:45</timestamp>Item 4</h4>
-                <p align="left">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-
-                <p align="left">Skills: Software</p>
-            </div>
-            <div>
-                <h4><timestamp href="javascript:void(0);" onclick="setCurrentTime(4)">01:12</timestamp>Item 5</h4>
-                <p align="left">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-
-                <p align="left">Skills: Software</p>
         </div>
     </main>   
     
@@ -203,9 +207,9 @@
     
     <div class="footer__inner">
         <div class="footer__social">
-            <div>
-                &nbsp; <a href="https://www.linkedin.com/" target="_blank" rel="noopener" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a> &nbsp;&nbsp; <a href="mailto:an.kn94@gmail.com" target="_blank" rel="noopener" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a> &nbsp;
-            </div>
+                <div>
+                    &nbsp; <a href="www.linkedin.com/in/karlsson-anton" target="_blank" rel="noopener" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a> &nbsp;&nbsp; <a href="mailto:an.kn94@gmail.com" target="_blank" rel="noopener" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a> &nbsp;
+                </div>
         </div>
 
         <div class="footer__content">
@@ -236,5 +240,26 @@
 
 
 
+<script>
+    
+    window.onscroll = function() {shrinkHeader()};
+
+    
+    var header = document.getElementById("myHeader");
+    var text = document.getElementById("myText");
+    var subtext = document.getElementById("mySubtext");
+
+    function shrinkHeader() {
+		if (document.body.scrollTop > 96 || document.documentElement.scrollTop > 96) {
+            header.classList.add("shrink");
+            text.classList.add("shrinkText");
+            subtext.classList.add("shrinkSubtext");
+		} else {
+            header.classList.remove("shrink");
+            text.classList.remove("shrinkText");
+            subtext.classList.remove("shrinkSubtext");
+		}
+	}
+</script>
     </body>
 </html>

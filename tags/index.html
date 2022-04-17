@@ -25,7 +25,7 @@
 
 
 
-<link rel="stylesheet" href="/main.8067e45a523fc017981602b25d3063cb96ed242558ddb10605e69af4ae5b2c73.css">
+<link rel="stylesheet" href="/main.db8a2be643a8464eeee5588b6b66a62c409ae96e09f646f11cb02350d774e1a6.css">
 
 
 
@@ -72,17 +72,13 @@
     
     
         <div class="container">
-            <header class="header">
+            <header class="header" id="myHeader">
     <span class="header__inner">
         <a href="/" style="text-decoration: none;">
     <div class="logo">
-        <span class="logo__inner">
-            
-            <span class="logo__right">
-                <span class="logo__text">Anton Karlsson</span>
-                <span class="logo__subtext">Technical Artist | Technical Leveldesigner</span>
-            </span>
-        </span>
+        
+        <span class="logo__text" id="myText">Anton Karlsson</span>
+        <span class="logo__subtext" id="mySubtext">Technical Artist | Technical Leveldesigner</span>
     </div>
 </a>
         <span class="header__right">
@@ -94,13 +90,13 @@
             <li class=""><a href="/">Showreel</a></li>
             
 
-            <li class=""><a href="/projects">Projects</a></li>
+            <li class=""><a href="/projects/">Projects</a></li>
             
 
-            <li class=""><a href="/resume">Resumé</a></li>
+            <li class=""><a href="/resume/">Resumé</a></li>
             
 
-            <li class=""><a href="/about">About</a></li>
+            <li class=""><a href="/about/">About</a></li>
     </ul>
 </nav>
 
@@ -142,9 +138,9 @@
     
     <div class="footer__inner">
         <div class="footer__social">
-            <div>
-                &nbsp; <a href="https://www.linkedin.com/" target="_blank" rel="noopener" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a> &nbsp;&nbsp; <a href="mailto:an.kn94@gmail.com" target="_blank" rel="noopener" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a> &nbsp;
-            </div>
+                <div>
+                    &nbsp; <a href="www.linkedin.com/in/karlsson-anton" target="_blank" rel="noopener" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a> &nbsp;&nbsp; <a href="mailto:an.kn94@gmail.com" target="_blank" rel="noopener" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a> &nbsp;
+                </div>
         </div>
 
         <div class="footer__content">
@@ -175,5 +171,26 @@
 
 
 
+<script>
+    
+    window.onscroll = function() {shrinkHeader()};
+
+    
+    var header = document.getElementById("myHeader");
+    var text = document.getElementById("myText");
+    var subtext = document.getElementById("mySubtext");
+
+    function shrinkHeader() {
+		if (document.body.scrollTop > 96 || document.documentElement.scrollTop > 96) {
+            header.classList.add("shrink");
+            text.classList.add("shrinkText");
+            subtext.classList.add("shrinkSubtext");
+		} else {
+            header.classList.remove("shrink");
+            text.classList.remove("shrinkText");
+            subtext.classList.remove("shrinkSubtext");
+		}
+	}
+</script>
     </body>
 </html>
