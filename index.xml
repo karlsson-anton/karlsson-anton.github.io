@@ -8,11 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Wed, 13 Apr 2022 05:08:22 +0200</lastBuildDate><atom:link href="https://karlsson-anton.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>projects</title>
-      <link>https://karlsson-anton.github.io/projects/</link>
+      <title>Portfolio</title>
+      <link>https://karlsson-anton.github.io/portfolio/</link>
       <pubDate>Wed, 13 Apr 2022 05:08:37 +0200</pubDate>
       
-      <guid>https://karlsson-anton.github.io/projects/</guid>
+      <guid>https://karlsson-anton.github.io/portfolio/</guid>
       <description>Way of the TurtleDynamic Water ShaderFoliage SwapperPanjshirItem 5Item 6Item 7Item 8Item 9Item 10</description>
     </item>
     
@@ -35,12 +35,12 @@
     </item>
     
     <item>
-      <title>turtle</title>
-      <link>https://karlsson-anton.github.io/projects/turtle/</link>
+      <title>Way of the Turtle</title>
+      <link>https://karlsson-anton.github.io/portfolio/turtle/</link>
       <pubDate>Wed, 13 Apr 2022 05:08:22 +0200</pubDate>
       
-      <guid>https://karlsson-anton.github.io/projects/turtle/</guid>
-      <description>Hello, my name is Anton Karlsson!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</description>
+      <guid>https://karlsson-anton.github.io/portfolio/turtle/</guid>
+      <description>Way of the TurtleIntroductionYou follow the adventure of the turtle couple Mr and Mrs Turtle, now shipwrecked on a tropical island after a huge storm.Not all turtles can swim you know...You are tasked with dealing with a crazy wizard in exchange for a way off the island.I joined the team at Illusion Labs in the very early stages of development of Way of the Turtle.</description>
     </item>
     
   </channel>
