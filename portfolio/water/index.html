@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Anton Karlsson ">
+<meta name="description" content="Dynamic River ShaderIntroductionI set out to create a dynamic river shader, which would bend around intersecting objects.The idea came from some previous experimenting I&#39;ve done in the past using Distance Fields in Unreal, primarily blending edges between landscapes and intersecting objects.I decided to package the shader in an all-in-one blueprint featuring a custom spline for ease-of-use by a designer.Features• Real-time dynamic river shader." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://karlsson-anton.github.io/portfolio/water/" />
+
+
+    <title>
+        
+            Dynamic River Shader :: Anton Karlsson 
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.ae639df461630822f2a5e4f866d044c3db6ff7cbaf318a49d942a9ac492d7a8f.css">
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Dynamic River Shader">
+<meta itemprop="description" content="Dynamic River ShaderIntroductionI set out to create a dynamic river shader, which would bend around intersecting objects.The idea came from some previous experimenting I&#39;ve done in the past using Distance Fields in Unreal, primarily blending edges between landscapes and intersecting objects.I decided to package the shader in an all-in-one blueprint featuring a custom spline for ease-of-use by a designer.Features• Real-time dynamic river shader."><meta itemprop="datePublished" content="2022-04-13T05:08:22+02:00" />
+<meta itemprop="dateModified" content="2022-04-13T05:08:22+02:00" />
+<meta itemprop="wordCount" content="556">
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dynamic River Shader"/>
+<meta name="twitter:description" content="Dynamic River ShaderIntroductionI set out to create a dynamic river shader, which would bend around intersecting objects.The idea came from some previous experimenting I&#39;ve done in the past using Distance Fields in Unreal, primarily blending edges between landscapes and intersecting objects.I decided to package the shader in an all-in-one blueprint featuring a custom spline for ease-of-use by a designer.Features• Real-time dynamic river shader."/>
+
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2022-04-13 05:08:22 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    </head>
+
+    
+    <body class="">
+
+    
+        <div class="container">
+            <header class="header" id="myHeader">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+        <span class="logo__text" id="myText">Anton Karlsson</span>
+        <span class="logo__subtext" id="mySubtext">Technical Artist | Technical Leveldesigner</span>
+    </div>
+</a>
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner">
+            
+
+            <li class=""><a href="/">Showreel</a></li>
+            
+
+            <li class=""><a href="/portfolio/">Portfolio</a></li>
+            
+
+            <li class=""><a href="/resume/">Resumé</a></li>
+            
+
+            <li class=""><a href="/about/">About</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main aria-role="main">
+        <div class="post-content">
+            
+<div class="project">
+    <img src="/images/water/banner.webp"/>
+    <h2>Dynamic River Shader</h2>
+    <div class="project-content">
+        <div class="project-grid">
+            <h3>Introduction</h3>
+            <p>
+                I set out to create a dynamic river shader, which would bend around intersecting objects.
+                The idea came from some previous experimenting I've done in the past using Distance Fields in Unreal, primarily blending edges between landscapes and intersecting objects.
+            </p>
+            <p>
+                I decided to package the shader in an all-in-one blueprint featuring a custom spline for ease-of-use by a designer.
+            </p>
+        </div>
+        <div class="project-grid">
+            <h3>Features</h3>
+            <p>
+                • Real-time dynamic river shader.<br>
+                • All-in-one Blueprint with easy customizability.<br>
+                • Spline-based river mesh for ease-of-use.<br>
+                • Underwater post-process effect.<br>
+                • Water line wetness using decals.
+            </p>
+        </div>
+        <div class="project-grid">
+            <h3>Distance Fields</h3>
+            <p>
+                The shader relies heavily on Unreal's Distance Fields to get intersecting objects and their sides in relation to the water surface direction.
+                <br>The most important node, which makes the entire shader possible, is "DistanceFieldGradient".
+                Using the gradient together with the surface mesh tangents in world space, I can determine the left and right side <br>of an intersecting object.
+            </p>
+            <p>
+                To control the distance of the gradient I use the "DistanceToNearestSurface" node, which act like a mask.
+                <br>With the resulting gradient I bend the surface mesh UVs smoothly around objects.
+                To add some variety to the surface normals I use the bent UVs in a "Motion_4WayChaos" node.
+                Using the "DistanceToNearestSurface" node I can again, as a mask, make the areas further from the water edges to appear calmer.
+            </p>
+        </div>
+        <div>
+            <img src="/images/water/distancefields.webp"/>
+        </div>
+        <div>
+            <img src="/images/water/watersurface.webp"/>
+        </div>
+        <div class="project-grid">
+            <h3>Water Surface</h3>
+            <p>
+                As I had made the choice to present my work in a realistic photogrammetry environment I wanted to use UE4's relatively new "SingleLayerWater" shading model.
+                With this it was fairly easy to get the surface looking very good using real-life scatter and absoption coefficiencies.
+            </p>
+        </div>
+        <div class="project-grid">
+            <h3>Custom Spline</h3>
+            <p>
+                I wanted to make the river easy to use by packaging it in a custom spline.
+                This way a designer could place it in a level and iterate on it instantly, throughout the process, without the need to leave the editor.
+            </p>
+            <p>
+                To further enhance the experience the user can work non-destructively using Unreal's landscape layers.
+                It allow the user the same control as the built in landscape splines, deformation and painting, with the added benefit of not needing a specific landscape spline layer.
+            </p>
+        </div>
+        <div>
+            <img src="/images/water/customspline.webp"/>
+        </div>
+        <div>
+            <img src="/images/water/waterwetness.webp"/>
+        </div>
+        <div class="project-grid">
+            <h3>Water Wetness</h3>
+            <p>
+                To make the impression that the water is actually wet, I needed the water line to appear wet along the entirety of the river.
+                <br>My inital idea was using vertex colors and/or additional landscape layers.
+            </p>
+            <p>
+                However, I saw the easier and less destructive solution as simply using decals.
+                Because I'm already using a spline it was easy to instantiate decals along its length.
+                It's a simple transparent, slightly tinted, low roughness material.
+            </p>
+        </div>
+        <div class="project-grid">
+            <h3>Underwater Post-Process Effect</h3>
+            <p>
+                Because I wanted the blueprint to be a complete package, I decided to include an underwater effect as well.
+                It uses the same coefficiency calculations as the surface for one unified look.
+            </p>
+            <p>
+                The post-process volume can be toggled on and off through the blueprint depending on the use.
+                When enabled, it uses a max distance between the camera and the spline, exposed in the blueprint, to enable and disable the effect for optimization.
+            </p>
+        </div>
+        <div>
+            <img src="/images/water/underwater.webp"/>
+        </div>
+        <div>
+            <img src="/images/water/conclusion.webp"/>
+        </div>
+        <div class="project-grid">
+            <h3>Conclusion</h3>
+            <p>
+                With more time on the project there's some things I would've liked to do.
+            </p>
+            <p>
+                The biggest optimization would've been the option to bake the UVs to a texture.
+                Another thing would be for the post-process effect to support an uneven surface and height difference.
+            </p>
+            <p>
+                Thank you for reading!
+            </p>
+            <h3>Credits</h3>
+            <p>
+                <a href="https://www.unrealengine.com/marketplace/en-US/product/rural-australia" target="_blank">Rural Australia</a> by Andrew Svanberg Hamilton
+            </p>
+        </div>
+    </div>
+</div>
+        </div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__social">
+                <div>
+                    &nbsp; <a href="https://www.linkedin.com/in/karlsson-anton" target="_blank" rel="noopener" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a> &nbsp;&nbsp; <a href="mailto:an.kn94@gmail.com" target="_blank" rel="noopener" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a> &nbsp;
+                </div>
+        </div>
+
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="https://karlsson-anton.github.io">Anton Karlsson</a></span>
+            
+            
+            
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </div>
+    </div>
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.2d3d449fc0ff117f00ac91342a8f76cd5b710411d7a0254dbe75da3234d2f685d6a0c44cff60c414e90b6a149da8e4032c713c25e4e6838e2e3918dc0ad2e81c.js" integrity="sha512-LT1En8D/EX8ArJE0Ko92zVtxBBHXoCVNvnXaMjTS9oXWoMRM/2DEFOkLahSdqOQDLHE8JeTmg44uORjcCtLoHA=="></script>
+
+
+
+<script>
+    
+    window.onscroll = function() {shrinkHeader()};
+
+    
+    var header = document.getElementById("myHeader");
+    var text = document.getElementById("myText");
+    var subtext = document.getElementById("mySubtext");
+
+    function shrinkHeader() {
+		if (document.body.scrollTop > 96 || document.documentElement.scrollTop > 96) {
+            header.classList.add("shrink");
+            text.classList.add("shrinkText");
+            subtext.classList.add("shrinkSubtext");
+		} else {
+            header.classList.remove("shrink");
+            text.classList.remove("shrinkText");
+            subtext.classList.remove("shrinkSubtext");
+		}
+	}
+</script>
+    </body>
+</html>

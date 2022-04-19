@@ -13,7 +13,7 @@
       <pubDate>Wed, 13 Apr 2022 05:08:37 +0200</pubDate>
       
       <guid>https://karlsson-anton.github.io/portfolio/</guid>
-      <description>Way of the TurtleDynamic Water ShaderFoliage SwapperPanjshirItem 5Item 6Item 7Item 8Item 9Item 10</description>
+      <description>GamesWay of the TurtleSpite: Absolution (TGA)Fungal (TGA)ProjectsDynamic River ShaderFoliage SwapperPanjshir, AfghanistanDDS ValidatorTools --</description>
     </item>
     
     <item>
@@ -31,7 +31,49 @@
       <pubDate>Wed, 13 Apr 2022 05:08:22 +0200</pubDate>
       
       <guid>https://karlsson-anton.github.io/about/</guid>
-      <description>Hello, my name is Anton Karlsson!Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&amp;nbsp;  &amp;nbsp;&amp;nbsp;  &amp;nbsp;</description>
+      <description>Hello, my name is Anton Karlsson!I&#39;m a positive and dedicated individual with a passion for making games.I have a previous background as a level designer, but with time I pivoted more towards shaders, tools and VFX.Therefore I sought out the Technical Artist course at The Game Assembly.I&#39;m always looking for creative solutions to increase efficiency of myself and those around me.To work in an ever evolving field like the games industry I find it incredibly valueable to be adaptable and communicative.</description>
+    </item>
+    
+    <item>
+      <title>DDS Validator</title>
+      <link>https://karlsson-anton.github.io/portfolio/dds/</link>
+      <pubDate>Wed, 13 Apr 2022 05:08:22 +0200</pubDate>
+      
+      <guid>https://karlsson-anton.github.io/portfolio/dds/</guid>
+      <description>DDS ValidatorIntroductionFeatures• Reads flags for power-of-two, compression, mipmaps and cubemap.
+• Supports all common compression formats like BCn/DXT and ASTC.
+• Highlights files of large sizes with a warning.
+• Open individual files or entire directories.
+• Supports drag-drop on application window and executable.
+• Open Windows Explorer to selected file.
+• Perforce integration for quick owner identification and workspace validation.Reading Data from the File HeaderPerforce IntegrationConclusionThank you for reading!</description>
+    </item>
+    
+    <item>
+      <title>Dynamic River Shader</title>
+      <link>https://karlsson-anton.github.io/portfolio/water/</link>
+      <pubDate>Wed, 13 Apr 2022 05:08:22 +0200</pubDate>
+      
+      <guid>https://karlsson-anton.github.io/portfolio/water/</guid>
+      <description>Dynamic River ShaderIntroductionI set out to create a dynamic river shader, which would bend around intersecting objects.The idea came from some previous experimenting I&#39;ve done in the past using Distance Fields in Unreal, primarily blending edges between landscapes and intersecting objects.I decided to package the shader in an all-in-one blueprint featuring a custom spline for ease-of-use by a designer.Features• Real-time dynamic river shader.</description>
+    </item>
+    
+    <item>
+      <title>Foliage Swapper</title>
+      <link>https://karlsson-anton.github.io/portfolio/foliage/</link>
+      <pubDate>Wed, 13 Apr 2022 05:08:22 +0200</pubDate>
+      
+      <guid>https://karlsson-anton.github.io/portfolio/foliage/</guid>
+      <description>Foliage SwapperIntroductionThe initial idea arose from wanting leaves falling from individual trees, which would mean the use of foliage actors.However, having an entire forest of foliage actors would not be feasible.And so this project was born, to swap between cheap instanced static meshes for more expensive actors within a set radius of the player.This way I could fully utilize Unreal&#39;s instanced static mesh system to reduce the amount of draw calls, but with the added benefit of having normal actors close to the player where it matters.</description>
+    </item>
+    
+    <item>
+      <title>Panjshir</title>
+      <link>https://karlsson-anton.github.io/portfolio/panjshir/</link>
+      <pubDate>Wed, 13 Apr 2022 05:08:22 +0200</pubDate>
+      
+      <guid>https://karlsson-anton.github.io/portfolio/panjshir/</guid>
+      <description>Panjshir, AfghanistanIntroductionI started this project as a challenge to create a large and detailed world (16.8km2).I decided on the realistic, tactical shooter Squad, because of it&#39;s large level sizes and the use of Unreal Engine 4.This proved to come with both pros and cons, but I will talk more about that further in.The level itself is heavily inspired by Panjshir, a mountainous province in northern Afghanistan.</description>
     </item>
     
     <item>
