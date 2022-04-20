@@ -31,7 +31,7 @@
       <pubDate>Wed, 13 Apr 2022 05:08:22 +0200</pubDate>
       
       <guid>https://karlsson-anton.github.io/about/</guid>
-      <description>Hello, my name is Anton Karlsson!I&#39;m a positive and dedicated individual with a passion for making games.I have a previous background as a level designer, but with time I pivoted more towards shaders, tools and VFX.Therefore I sought out the Technical Artist course at The Game Assembly.I&#39;m always looking for creative solutions to increase efficiency of myself and those around me.To work in an ever evolving field like the games industry I find it incredibly valueable to be adaptable and communicative.</description>
+      <description>&amp;nbsp;  &amp;nbsp;&amp;nbsp;  &amp;nbsp;Hello, my name is Anton Karlsson!I&#39;m a positive and dedicated individual with a passion for making games.I have a previous background as a level designer, but with time I pivoted more towards shaders, tools and VFX.Therefore I sought out the Technical Artist course at The Game Assembly.I&#39;m always looking for creative solutions to increase efficiency of myself and those around me.</description>
     </item>
     
     <item>
@@ -40,13 +40,7 @@
       <pubDate>Wed, 13 Apr 2022 05:08:22 +0200</pubDate>
       
       <guid>https://karlsson-anton.github.io/portfolio/dds/</guid>
-      <description>DDS ValidatorIntroductionFeatures• Reads flags for power-of-two, compression, mipmaps and cubemap.
-• Supports all common compression formats like BCn/DXT and ASTC.
-• Highlights files of large sizes with a warning.
-• Open individual files or entire directories.
-• Supports drag-drop on application window and executable.
-• Open Windows Explorer to selected file.
-• Perforce integration for quick owner identification and workspace validation.Reading Data from the File HeaderPerforce IntegrationConclusionThank you for reading!</description>
+      <description>DDS ValidatorIntroductionI started this project during pre-production of our first game project.I saw it as a challenge for myself to refresh my programming and create something useful for the projects at The Game Assembly to come.It&#39;s easy to use and highlights problematic files not utilizing the DDS formats strengths.After receiving some feedback I decided to also integrate Perforce into the program, which proved to be a valuable opportunity to learn more about Perforce and its accompanied API.</description>
     </item>
     
     <item>

@@ -5,13 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Anton Karlsson ">
-<meta name="description" content="DDS ValidatorIntroductionFeatures• Reads flags for power-of-two, compression, mipmaps and cubemap.
-• Supports all common compression formats like BCn/DXT and ASTC.
-• Highlights files of large sizes with a warning.
-• Open individual files or entire directories.
-• Supports drag-drop on application window and executable.
-• Open Windows Explorer to selected file.
-• Perforce integration for quick owner identification and workspace validation.Reading Data from the File HeaderPerforce IntegrationConclusionThank you for reading!" />
+<meta name="description" content="DDS ValidatorIntroductionI started this project during pre-production of our first game project.I saw it as a challenge for myself to refresh my programming and create something useful for the projects at The Game Assembly to come.It&#39;s easy to use and highlights problematic files not utilizing the DDS formats strengths.After receiving some feedback I decided to also integrate Perforce into the program, which proved to be a valuable opportunity to learn more about Perforce and its accompanied API." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -31,7 +25,7 @@
 
 
 
-<link rel="stylesheet" href="/main.ae639df461630822f2a5e4f866d044c3db6ff7cbaf318a49d942a9ac492d7a8f.css">
+<link rel="stylesheet" href="/main.6c96784e7ebf9faab6427082a87a914110d9a73fa02870bc4058a169ad60fad9.css">
 
 
 
@@ -45,25 +39,13 @@
 
 
 <meta itemprop="name" content="DDS Validator">
-<meta itemprop="description" content="DDS ValidatorIntroductionFeatures• Reads flags for power-of-two, compression, mipmaps and cubemap.
-• Supports all common compression formats like BCn/DXT and ASTC.
-• Highlights files of large sizes with a warning.
-• Open individual files or entire directories.
-• Supports drag-drop on application window and executable.
-• Open Windows Explorer to selected file.
-• Perforce integration for quick owner identification and workspace validation.Reading Data from the File HeaderPerforce IntegrationConclusionThank you for reading!"><meta itemprop="datePublished" content="2022-04-13T05:08:22+02:00" />
+<meta itemprop="description" content="DDS ValidatorIntroductionI started this project during pre-production of our first game project.I saw it as a challenge for myself to refresh my programming and create something useful for the projects at The Game Assembly to come.It&#39;s easy to use and highlights problematic files not utilizing the DDS formats strengths.After receiving some feedback I decided to also integrate Perforce into the program, which proved to be a valuable opportunity to learn more about Perforce and its accompanied API."><meta itemprop="datePublished" content="2022-04-13T05:08:22+02:00" />
 <meta itemprop="dateModified" content="2022-04-13T05:08:22+02:00" />
-<meta itemprop="wordCount" content="77">
+<meta itemprop="wordCount" content="462">
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="DDS Validator"/>
-<meta name="twitter:description" content="DDS ValidatorIntroductionFeatures• Reads flags for power-of-two, compression, mipmaps and cubemap.
-• Supports all common compression formats like BCn/DXT and ASTC.
-• Highlights files of large sizes with a warning.
-• Open individual files or entire directories.
-• Supports drag-drop on application window and executable.
-• Open Windows Explorer to selected file.
-• Perforce integration for quick owner identification and workspace validation.Reading Data from the File HeaderPerforce IntegrationConclusionThank you for reading!"/>
+<meta name="twitter:description" content="DDS ValidatorIntroductionI started this project during pre-production of our first game project.I saw it as a challenge for myself to refresh my programming and create something useful for the projects at The Game Assembly to come.It&#39;s easy to use and highlights problematic files not utilizing the DDS formats strengths.After receiving some feedback I decided to also integrate Perforce into the program, which proved to be a valuable opportunity to learn more about Perforce and its accompanied API."/>
 
 
 
@@ -140,13 +122,18 @@
         <div class="post-content">
             
 <div class="project">
-    <img src="/images/panjshir/13_1080.webp"/>
+    <img src="/images/dds/banner.webp"/>
     <h2>DDS Validator</h2>
     <div class="project-content">
         <div class="project-grid">
             <h3>Introduction</h3>
             <p>
-                
+                I started this project during pre-production of our first game project.
+                <br>I saw it as a challenge for myself to refresh my programming and create something useful for the projects at The Game Assembly to come.
+                <br>It's easy to use and highlights problematic files not utilizing the DDS formats strengths.
+            </p>
+            <p>
+                After receiving some feedback I decided to also integrate Perforce into the program, which proved to be a valuable opportunity to learn more about Perforce and its accompanied API.
             </p>
         </div>
         <div class="project-grid">
@@ -155,7 +142,7 @@
                 • Reads flags for power-of-two, compression, mipmaps and cubemap.<br>
                 • Supports all common compression formats like BCn/DXT and ASTC.<br>
                 • Highlights files of large sizes with a warning.<br>
-                • Open individual files or entire directories.<br>
+                • Open and read individual files or entire directories.<br>
                 • Supports drag-drop on application window and executable.<br>
                 • Open Windows Explorer to selected file.<br>
                 • Perforce integration for quick owner identification and workspace validation.
@@ -164,32 +151,49 @@
         <div class="project-grid">
             <h3>Reading Data from the File Header</h3>
             <p>
-                
+                The first 128 bytes accommodate the 4 byte long magic value (DDS ), followed by the 124 byte long basic "DDS_HEADER".
+                <br>Here is where most information about the file can be found, like X and Y resolution, mipmap count and cubemap flags.
+            </p>
+            <p>
+                However, compression format of modern DDS files can be found in the DX10 extended header, which increase the header size to 144 bytes.
+                <br>The program reads and saves these values in a struct for each and every file, including their file size and file path as an identifier.
+                <br>This way I can close any file streams after collecting the data in the file header.
+            </p>
+            <p>
+                Using this data I immediately compare it to some rules, like power-of-two, if it uses mipmaps and in some cases, if it's a cubemap.
+                <br>I then populate a list view with all the collected data and present it in a clear way where it can be sorted and inspected.
+                <br>A detailed view for individual files with more in-depth information about validity is also possible by selecting a single item in the list.
             </p>
         </div>
         <div>
-            <img src="/images/panjshir/landscapematerial.webp"/>
+            <img src="/images/dds/readingdata.webp"/>
         </div>
         <div>
-            <img src="/images/panjshir/landscapematerial.webp"/>
+            <img src="/images/dds/perforce.webp"/>
         </div>
         <div class="project-grid">
             <h3>Perforce Integration</h3>
             <p>
-                
+                The perforce integration is an addition I made from feedback I got of the tool.
+                It would make the tool more integrated in the pipeline at The Game Assembly, where we use Perforce as version control.
+            </p>
+            <p>
+                It features workspace/client swapping, open and read workspace/client folder and information like revision, changelist ID, date, user and description.
             </p>
         </div>
         <div class="project-grid">
             <h3>Conclusion</h3>
             <p>
-                
+                In most modern engines you never have to work directly with the DDS format, unless you're a programmer.
+                However, for the projects at The Game Assembly, where all textures are DDS, it proves to be a useful tool.
+            </p>
+            <p>
+                Either for Technical Artists, game artists or the group as a whole.
+                <br>In the end I learned a lot about the DDS format, Perforce and their API as well as refreshing my programming.
             </p>
             <p>
                 Thank you for reading!
             </p>
-        </div>
-        <div>
-            <img src="/images/panjshir/landscapematerial.webp"/>
         </div>
     </div>
 </div>
