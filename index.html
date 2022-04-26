@@ -26,7 +26,7 @@
 
 
 
-<link rel="stylesheet" href="/main.6c96784e7ebf9faab6427082a87a914110d9a73fa02870bc4058a169ad60fad9.css">
+<link rel="stylesheet" href="/main.33de32d6b28531e33c6502cb9c4ebb8709eb7e124f4b15cb358c09b47011415b.css">
 
 
 
@@ -117,7 +117,9 @@
                 
     <main aria-role="main">
         <div>
-            <div id="player"></div>
+            <div class="video-container">
+                <div id="player"></div>
+            </div>
 
             <h2>Breakdown</h2>
             <img src="" />
@@ -178,9 +180,9 @@
                 var player;
                 function onYouTubeIframeAPIReady() {
                     player = new YT.Player("player", {
-                    height: "720",
-                    width: "1280",
-                    videoId: "EGC7GTBzdbo",
+                        videoId: "EGC7GTBzdbo",
+                        width: "100%",
+                        height: "100%",
                     });
                 }
                 function setCurrentTime(slideNum) {
