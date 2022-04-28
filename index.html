@@ -183,6 +183,11 @@
                         videoId: "EGC7GTBzdbo",
                         width: "100%",
                         height: "100%",
+                        events: {
+                            'onReady': function (event) {
+                                event.target.setVolume(10);
+                            }
+                        }
                     });
                 }
                 function setCurrentTime(slideNum) {
